@@ -22,7 +22,8 @@ mongoose.connection.on("connected", () => {
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+const host = '0.0.0.0';
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, host, () => {
+    console.log(`Server is running on port ${ PORT }`);
 });
